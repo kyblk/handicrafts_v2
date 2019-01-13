@@ -1,3 +1,5 @@
+'use strict'
+const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
@@ -8,7 +10,8 @@ module.exports = {
             // both options are optional
             filename: "[name].css",
             chunkFilename: "[id].css"
-        })
+        }),
+        new VueLoaderPlugin()
     ],
     entry: './handwork/handicrafts/static/js/main.js',
     output: {
@@ -28,6 +31,11 @@ module.exports = {
                 },
                 "css-loader"
             ]
-        }],
+        },
+        {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      }
+      ],
     }
 };

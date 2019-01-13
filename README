@@ -1,0 +1,6 @@
+install Node
+
+npm init
+npm install
+
+npm run build

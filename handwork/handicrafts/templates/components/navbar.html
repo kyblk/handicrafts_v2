@@ -1,0 +1,34 @@
+{% block navbar %}
+    <div class="menu-background-color menu-height">
+        <div class="menu-center">
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand menu-indent" href="{% url 'index' %}">
+                        Katarina Fairy
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNavAltMarkup"
+                            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse ml-auto" id="navbarNavAltMarkup">
+                        <div class="navbar-nav mx-auto menu-indent">
+                            <a href="tel:+79995172866" class="mx-auto">
+                                <span class="menu-text">+7 (999) 517-28-66 <i class="fa fa-vk"></i></span>
+                            </a>
+                        </div>
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link mx-auto {% if request.resolver_match.view_name == 'index' %}active{% endif %}"
+                               href="{% url 'index' %}">Главная </a>
+                            <a class="nav-item nav-link mx-auto {% if request.resolver_match.view_name == 'catalog_view' %}active{% endif %}"
+                               href="{% url 'catalog_view' %}">Каталог</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+{% endblock %}

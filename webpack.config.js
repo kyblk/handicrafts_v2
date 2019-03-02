@@ -1,4 +1,5 @@
 'use strict'
+var webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
@@ -11,7 +12,12 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+        })
     ],
     entry: './handwork/handicrafts/static/js/main.js',
     output: {
@@ -37,5 +43,6 @@ module.exports = {
         use: 'vue-loader'
       }
       ],
-    }
+    },
+    performance: {hints: false},
 };

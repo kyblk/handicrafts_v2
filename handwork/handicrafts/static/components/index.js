@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 
-import NavbarMenu from './NavbarMenu.vue';
 import MainSlider from './MainSlider.vue';
 import CatalogList from './CatalogList.vue';
 import ProductList from './ProductList.vue';
@@ -9,10 +8,10 @@ import ProductList from './ProductList.vue';
 
 Vue.use(BootstrapVue);
 
-new Vue({
-  el: '#navbar-menu-component',
-  render: h => h(NavbarMenu)
-});
+Vue.prototype.$hostname = document.location.origin;
+Vue.prototype.$hostname_api = document.location.origin + '/api';
+Vue.prototype.$pathname = document.location.pathname;
+
 
 new Vue({
   el: '#main-slider-component',

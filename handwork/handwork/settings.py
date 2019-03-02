@@ -25,7 +25,7 @@ SECRET_KEY = '-uxr_6gjhdgy^jl58bg&qaz33fz7sij7=rz41yi=de9a&be(!a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.48', 'http://kyblk.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_cleanup',
+    'rest_framework',
+    'mptt',
     'handicrafts',
 ]
 
